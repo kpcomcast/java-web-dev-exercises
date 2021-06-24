@@ -19,6 +19,9 @@ public class Area {
             if (stuff.contains(" ") || stuff.isEmpty() || !stuff.matches("(.*)[0-9](.*)")) {
                 System.out.println("No blanks, spaces, or other characters. Only numbers.");
                 valid = false;
+            } else if (Double.valueOf(stuff) <= 0) {
+                System.out.println("Positive values please.");
+                valid = false;
             } else {
                 System.out.println("Thanks for the number!");
                 radius = Double.valueOf(stuff);
