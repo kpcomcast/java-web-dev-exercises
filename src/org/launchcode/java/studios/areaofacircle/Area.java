@@ -9,7 +9,6 @@ public class Area {
         double area;
         Scanner input;
         boolean valid = false;
-        Pattern p = Pattern.compile(".");
 
         input = new Scanner(System.in);
         System.out.println("Enter a radius: ");
@@ -19,9 +18,11 @@ public class Area {
             if (stuff.contains(" ") || stuff.isEmpty() || !stuff.matches("(.*)[0-9](.*)")) {
                 System.out.println("No blanks, spaces, or other characters. Only numbers.");
                 valid = false;
+//                System.exit(0);
             } else if (Double.valueOf(stuff) <= 0) {
                 System.out.println("Positive values please.");
                 valid = false;
+//                System.exit(0);
             } else {
                 System.out.println("Thanks for the number!");
                 radius = Double.valueOf(stuff);
